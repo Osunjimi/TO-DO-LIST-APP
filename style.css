@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #321784;
+}
+.container {
+  /* background-color: #321784; */
+  padding: 30px;
+}
+.wrapper {
+  width: 55%;
+  background: white;
+  /* border: 1px solid red; */
+  height: max-content;
+}
+.todo-input {
+  font-size: 30px;
+}
+.todo-description{
+  font-size: 23px;
+}
+.btn1 {
+  background-color: #321784;
+  width: 90px;
+}
+.btn1:hover {
+  background-color: #4c378d;
+}
+.screen{
+  height: 55vh;
+  overflow-y: scroll;
+}
+.inner-aspect{
+  border: 2px solid #321784;
+}
+.screen::-webkit-scrollbar{
+  background-color: #321784;
+  background: linear-gradient(45deg, #321784, white);
+  border-radius: 50px;
+}
+::-webkit-scrollbar{
+  /* background-color: #321784; */
+}
+@media (min-width: 1024px) {
+  body{
+    overflow: hidden;
+  }
+}
+@media (max-width: 991px) {
+  .wrapper{
+    width: 99% !important;
+  }
+}
