@@ -11,7 +11,7 @@ const displayList = () =>{
                     <h4>${element.task}</h4> 
                     <h6 class="py-2">${element.desc}</h6> 
                     <button class="btn btn-success" type="submit" id="done" onclick="markAsDone(${index})">${element.status?'DONE':'<i class="fa-solid fa-check"></i>'}</button>
-                    <button class="btn btn-danger" type="submit" onclick="clearList()"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-danger" type="submit" onclick="clearList(${index})"><i class="fa-solid fa-trash"></i></button>
                     <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="prepareEdit(${index})"" type="submit">Edit</button>
         </div>`
     });
@@ -39,8 +39,13 @@ const toDoList = () =>{
     //setting items to a local storage and convert to string
     localStorage.setItem('todoList', JSON.stringify(listOfTask))
     document.getElementById('screen').innerHTML = ''
+    
     // listOfTask.push(description)
-    displayList()
+    if (nameOfTask == '' || description == '') {
+      alert('Input task or Description')
+    } else {
+      displayList()
+    }
 }
 
 const clearList = (index) =>{
